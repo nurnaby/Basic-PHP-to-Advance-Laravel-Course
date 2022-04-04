@@ -5,4 +5,9 @@ Take your skills to a new level and join millions of users that have learned PHP
 
 <details>
 <summary>Click Here </summary>
+- Operator: Increment (++) and Decrement (--)
+- For Loop
+- While loop
+- Do while
+- Foreach
 </details>
