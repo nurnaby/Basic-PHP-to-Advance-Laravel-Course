@@ -1,12 +1,12 @@
 <?php
 // Question 01 
 
-  $length = cal_days_in_month(CAL_GREGORIAN,4,2022);
-  for ($i=0; $i<=$length; $i++) {
-      echo $i;
-      echo "<br>";
+  // $length = cal_days_in_month(CAL_GREGORIAN,4,2022);
+  // for ($i=1; $i<=$length; $i++) {
+  //     echo $i;
+  //     echo "<br>";
 
-  }
+  // }
 
 
 // Question 02: 
@@ -35,12 +35,24 @@
 
 
 // Question 05: 
-// $prosucts = ["apple", "orange","banana","mango" ];
-// foreach ($prosucts as $product) {
+$prosucts = ["apple", "orange","banana","mango" ];
+
+
+echo"<table border='1px' cellpadding='5px' cellspacing='0'>";
+echo"<tr>
+        <th>Sl</th>
+        <th>Product Name</th>
+    </tr>";
+foreach ($prosucts as $sl=> $product) {
+  $s=++$sl;
+    echo"<tr>";
+        echo"<td> $s</td><td>$product</td>";
+        
     
-//     echo $product;
+    echo "</tr>";
     
-// }
+}
+echo"<table>";
 
 
 
