@@ -52,10 +52,7 @@ foreach ($prosucts as $sl=> $product) {
         $s=++$sl;
     echo"<tr>";
         echo"<td> $s</td><td>$product</td>";
-        
-    
-    echo "</tr>";
-    
+    echo "</tr>";  
 }
 echo"<table>";
 
