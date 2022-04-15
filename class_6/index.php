@@ -13,41 +13,22 @@ $total_qut = array_sum(array_column($purchased_products, 'qty'));
 echo "Total amount: ".$total_amount."tk"."<br>";
 echo "Total purchased qty:".$total_qut;
 
+// // Question 02: 
+// $first_email_array = ["abc@gmail.com", "xyz@gmail.com", "demo@gmail.com"]; 
+// $second_email_array = ["efg@gmail.com", "xyz@gmail.com", "dummy@gmail.com"];
+// $array = array_unique(array_merge($first_email_array, $second_email_array));
 
+// echo "<pre>";
+// print_r($array);
+// echo "</pre>";
 
-// $new=0;
-// foreach ($purchased_products as $value){
-//     // echo "<pre>";
-//     // print_r($value['total_price']);
-//     // echo "</pre>";
-// //    echo  $total =$value['total_price'];
-// //    echo "<br>";
-   
-   
-//     foreach($value as $key => $val){
-//         echo $val['total_price'];
-        
-//     }
-// }
-// echo $new;
+// // Question 03:
 
-
-// Question 02: 
-$first_email_array = ["abc@gmail.com", "xyz@gmail.com", "demo@gmail.com"]; 
-
-$second_email_array = ["efg@gmail.com", "xyz@gmail.com", "dummy@gmail.com"];
-
-$array = array_unique(array_merge($first_email_array, $second_email_array));
-
-
-echo "<pre>";
-print_r($array);
-echo "</pre>";
+// $citylist = array( "Black Canyon City", "Chandler", "Flagstaff", "Gilbert", "Glendale", "Globe", "Mesa", "Miami", "Phoenix", "Peoria", "Prescott", "Scottsdale", "Sun City", "Surprise", "Tempe", "Tucson", "Wickenburg" );
 
 
 
-
-
+// print_r($citylist);
 
 
 
