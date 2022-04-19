@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.team {
+    background-color: #f1f2f6;
+   
+}
+
+
+/* our service section start */
+
+img {
+    height: 100%;
+}
+
+.service-section {
+    text-align: center;
+    color: rgb(16, 31, 241);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.spantext span {
+    background: orange;
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.card {
+    box-shadow: 3px 4px 10px black;
+}
+
+.card h1 {
+    color: rgb(26, 2, 175);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.card p {
+    color: rgb(71, 64, 64);
+    font-size: 1rem;
+    padding: 10px;
+}
+
+
+/* our service sction end */
