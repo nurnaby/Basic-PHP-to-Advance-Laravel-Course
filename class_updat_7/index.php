@@ -1,39 +1,27 @@
 <?php
 $our_teams = [
-    ["name"=>"sohag","skile"=>"Web desiner",'img'=>"img/img1.jpg"],
-    ["name"=>"minke","skile"=>"Web desiner",'img'=>"img/img2.jpg"],
-    ["name"=>"ja","skile"=>"Web desiner",'img'=>"img/img3.jpg"],
-    ["name"=>"ja","skile"=>"Web desiner",'img'=>"img/img4.jpg"]
+    ["name"=>"sohag","skile"=>"Web developer",'img'=>"img/img1.jpg"],
+    ["name"=>"Tom Cruise","skile"=>"Full Stact Developer",'img'=>"img/img2.jpg"],
+    ["name"=>"David Corner","skile"=>"Front End Developer",'img'=>"img/img3.jpg"],
+    ["name"=>"Vin Diesel","skile"=>"Senior App Developer",'img'=>"img/img4.jpg"]
 ];
-// Array
-// (
-//     [0] => Array
-//         (
-//             [question1] => What is loream ipsum;
-//             [option] => Array
-//                 (
-//                     [0] => ans1
-//                     [1] => ans2
-//                     [2] => ans3
-//                 )
-
-//         )
-
-// )
 
 
-$questionSet = [
-    ["question" => "Whwt is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']],
-    ["question" => "What is loream ipsum","option"=>["ans1","ans2",'ans3']]
-];
+
+
+// $newArrays = array_rand($questionSet,9);
+
+
+// $results = $questionSet[$newArray[1]];
+// foreach ($questionSet as $result) {
+//     echo $result['question']."<br>";
+//     foreach ($result as $val) {
+//       echo $val[0]."<br>";
+//       echo $val[1];
+//     }
+// }
+// echo "<pre>";
+// print_r($newArray);
 // echo "<pre>";
 // print_r($questionSet);
 
@@ -43,6 +31,44 @@ $questionSet = [
 //         echo $question[0];
 //     }
 // }
+$qusetionSet = [
+
+    [
+
+        'question' => 'What is loream ipsum1',
+
+        'options' => [
+
+            'ans1', 'ans2', 'ans3', 'ans4'
+
+        ]
+
+    ],
+
+
+
+    [
+
+        'question' => 'What is loream ipsum?2',
+
+        'options3' => [
+
+            'ans1', 'ans2', 'ans3', 'ans4'
+        ]
+    ],
+    [
+
+        'question' => 'What is loream ipsum?3',
+
+        'options' => [
+
+            'ans1', 'ans2', 'ans3', 'ans4'
+
+        ]
+
+    ]
+
+];
 
 
 
@@ -68,6 +94,8 @@ $questionSet = [
 
 
 
+
+
     <section class="team">
         <div class="service-section pt-5">
             <h1 class="spantext">Our <span>Team Member</span> </h1>
@@ -89,12 +117,12 @@ $questionSet = [
 
                         </div>
                         <div class="parson-name my-2">
-                            <h3 class="text-white"> Sohag</h3>
+                            <h3 class="text-white"> <?php echo $our_team['name']?></h3>
 
                         </div>
                         <div class="info">
                             <h6 class="text-white">
-                                Web Developer
+                                <?php echo $our_team['skile'] ?>
                             </h6>
                         </div>
                     </div>
