@@ -1,8 +1,29 @@
 <?php
-
+$erro=null;
 if(isset($_POST['submit'])){
-    echo $_POST['f_name'];
-    echo $_POST['l_name'];
+    
+    $f_name = $_POST['f_name'];
+    $l_name = $_POST['l_name'];
+    $u_email = $_POST['u_email'];
+    $u_password = $_POST['u_password'];
+    $R_u_password = $_POST['R_u_password'];
+    if($f_name=="" || $l_name=="" || $u_email=="" || $u_password ==""){
+         $erro ="All feild is requerd";
+    }else{
+        
+    }
+    // if(empty($f_name)){
+    //     $name_erro = "you must enter your frist name";
+
+    // }else{
+        
+    // }
+    // if(empty($l_name)){
+    //     // $name_erro = "you must enter your last name";
+
+    // }else{
+
+    // }
 }
   
 
@@ -39,6 +60,7 @@ if(isset($_POST['submit'])){
 
                 <div class="col-6">
                     <input type="text" placeholder="Frist Name" class="form-control" name="f_name" autocomplete="off">
+                    <!-- <?php echo $name_erro ?> -->
                 </div>
                 <div class="col-6">
                     <input type="text" placeholder="Frist Name" class="form-control" name="l_name" autocomplete="off">
@@ -46,7 +68,7 @@ if(isset($_POST['submit'])){
             </div>
             <div class="row px-4 py-2">
                 <div class="col-12">
-                    <input type="email" placeholder="User Email" class="form-control" name="u_email" autocomplete="off">
+                    <input type="text" placeholder="User Email" class="form-control" name="u_email" autocomplete="off">
                 </div>
             </div>
             <div class="row px-4 py-2">
@@ -99,6 +121,11 @@ if(isset($_POST['submit'])){
                         </label>
                     </div>
                 </dic>
+            </div>
+            <div class="eroo">
+                <?php
+                    echo $erro;
+                    ?>
             </div>
             <div class="row px-4 ">
                 <div class="col-12 ">
