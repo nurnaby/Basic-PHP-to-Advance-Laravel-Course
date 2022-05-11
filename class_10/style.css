@@ -12,7 +12,7 @@ body {
 }
 
 .wrap {
-    width: 35%;
+    width: 30%;
     background-color: #f5f6fa;
     margin: auto;
     border-top: 5px solid #fbc531;
@@ -20,7 +20,7 @@ body {
 
 h2 {
     padding-top: 10px;
-    color: black;
+    color: rgb(34, 31, 31);
 }
 
 .margin_left {
