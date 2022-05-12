@@ -54,10 +54,6 @@ if(isset($_POST['submit'])){
 }
 
 ?>
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -80,11 +76,7 @@ if(isset($_POST['submit'])){
         if(isset($validatMag)){
             echo $validatMag;
         }
-        
-        
         ?>
-
-
         <form action="" method="post">
             <div class="row px-4 py-2">
                 <div class="col-6">
@@ -151,7 +143,7 @@ if(isset($_POST['submit'])){
                 </dic>
             </div>
             <div class="row px-4 ">
-                <div class="col-12 mb-4">
+                <div class="col-12 mb-3">
                     <!-- <a href=" " class="btn btn-warning btn-block " name="submit">Submit</a> -->
                     <button class="btn btn-warning btn-block" name="submit">submit</button>
                 </div>
