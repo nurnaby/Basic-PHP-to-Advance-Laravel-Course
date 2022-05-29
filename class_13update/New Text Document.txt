@@ -1,0 +1,9 @@
+                         class 13 assignment 
+single insert query for users table 
+-----------------------------------
+INSERT INTO users (username,age,phone,address) VALUES('nur',23,223344,'dhaka')
+multiple  insert query for users table 
+-----------------------------------
+INSERT INTO users (username,age,phone,address) VALUES('nur',23,223344,'dhaka'),('naby',33,017464932,'dhaka')
+single insert query for Products  table 
+--------------------------------------
