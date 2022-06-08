@@ -7,3 +7,35 @@ multiple  insert query for users table
 INSERT INTO users (username,age,phone,address) VALUES('nur',23,223344,'dhaka'),('naby',33,017464932,'dhaka')
 single insert query for Products  table 
 --------------------------------------
+INSERT INTO Products  (post_title ,post_details,post_file) VALUES('news','today news','gaems')
+multiple  insert query for Products table 
+-----------------------------------
+INSERT INTO Products  (post_title ,post_details,post_file) VALUES('news','today news','gaems'),('news','today news','gaems')
+single insert query for comments   table
+-------------------------------------
+INSERT INTO comments   (post_id ,comment) VALUES(1,'hi')
+multiple  insert query for comments  table 
+----------------------------------------
+INSERT INTO comments   (post_id ,comment) VALUES(1,'hi')
+
+updat query in users table
+---------------------------
+UPDATE users SET username="nur naby" WHERE id=1;
+update query in products table
+------------------------
+UPDATE products SET post_title ="update news" WHERE id=1;
+
+update query in comments 
+------------------------
+UPDATE comments SET comment ="update news" WHERE id=1;
+delete  query in users table 
+-------------------------
+DELETE FROM users WHERE id =7;
+dalete from products table 
+-------------------------
+DELETE FROM products WHERE id =7;
+dalete from comments  table
+------------------------
+DELETE FROM comments  WHERE id =7;
+
+

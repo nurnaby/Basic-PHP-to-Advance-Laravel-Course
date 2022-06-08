@@ -1,0 +1,4 @@
+inner join 
+SELECT us.name,us.users_reg_id,usd.city
+FROM users As us INNER JOIN user_details As usd
+ON us.users_reg_id=usd.users_reg_id;
