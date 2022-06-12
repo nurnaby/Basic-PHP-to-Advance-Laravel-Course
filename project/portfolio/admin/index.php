@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <html lang="en">
-
 <?php include 'includes/head.php';?>
+
 <body>
     <!-- Main navbar -->
     <?php include 'includes/mainNav.php'; ?>
     <!-- /main navbar -->
-
-
     <!-- Page container -->
     <div class="page-container">
-
         <!-- Page content -->
         <div class="page-content">
-
             <!-- Main sidebar -->
             <div class="sidebar sidebar-main">
                 <div class="sidebar-content">
-
                     <!-- User menu -->
                     <div class="sidebar-user">
                         <div class="category-content">
@@ -31,7 +26,6 @@
                                         <i class="icon-pin text-size-small"></i> &nbsp;Santa Ana, CA
                                     </div>
                                 </div>
-
                                 <div class="media-right media-middle">
                                     <ul class="icons-list">
                                         <li>
@@ -43,75 +37,29 @@
                         </div>
                     </div>
                     <!-- /user menu -->
-
-
                     <!-- Main navigation -->
                     <?php include 'includes/navigation.php';?>
                     <!-- /main navigation -->
-
                 </div>
             </div>
             <!-- /main sidebar -->
-
-
             <!-- Main content -->
             <div class="content-wrapper">
-
                 <!-- Page header -->
                 <div class="page-header">
-                    <div class="page-header-content">
-                        <div class="page-title">
-                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span>
-                                - Dashboard</h4>
-                        </div>
-
-                        <div class="heading-elements">
-                            <div class="heading-btn-group">
-                                <a href="#" class="btn btn-link btn-float has-text"><i
-                                        class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
-                                <a href="#" class="btn btn-link btn-float has-text"><i
-                                        class="icon-calculator text-primary"></i> <span>Invoices</span></a>
-                                <a href="#" class="btn btn-link btn-float has-text"><i
-                                        class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
                             <li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
                             <li class="active">Dashboard</li>
                         </ul>
-
-                        <ul class="breadcrumb-elements">
-                            <li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="icon-gear position-left"></i> Settings
-                                    <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
-                                    <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
-                                    <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#"><i class="icon-gear"></i> All settings</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                 </div>
                 <!-- /page header -->
-
-
                 <!-- Content area -->
                 <div class="content">
-
                     <!-- Main charts -->
                     <div class="row">
                         <div class="col-lg-7">
-
                             <!-- Traffic sources -->
                             <div class="panel panel-flat">
                                 <div class="panel-heading">
@@ -128,7 +76,6 @@
                                         </form>
                                     </div>
                                 </div>
-
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -143,12 +90,10 @@
                                                     <div class="text-muted">2,349 avg</div>
                                                 </li>
                                             </ul>
-
                                             <div class="col-lg-10 col-lg-offset-1">
                                                 <div class="content-group" id="new-visitors"></div>
                                             </div>
                                         </div>
-
                                         <div class="col-lg-4">
                                             <ul class="list-inline text-center">
                                                 <li>
@@ -161,12 +106,10 @@
                                                     <div class="text-muted">08:20 avg</div>
                                                 </li>
                                             </ul>
-
                                             <div class="col-lg-10 col-lg-offset-1">
                                                 <div class="content-group" id="new-sessions"></div>
                                             </div>
                                         </div>
-
                                         <div class="col-lg-4">
                                             <ul class="list-inline text-center">
                                                 <li>
@@ -181,22 +124,17 @@
                                                         5,378 avg</div>
                                                 </li>
                                             </ul>
-
                                             <div class="col-lg-10 col-lg-offset-1">
                                                 <div class="content-group" id="total-online"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="position-relative" id="traffic-sources"></div>
                             </div>
                             <!-- /traffic sources -->
-
                         </div>
-
                         <div class="col-lg-5">
-
                             <!-- Sales stats -->
                             <div class="panel panel-flat">
                                 <div class="panel-heading">
@@ -217,7 +155,6 @@
                                         </form>
                                     </div>
                                 </div>
-
                                 <div class="container-fluid">
                                     <div class="row text-center">
                                         <div class="col-md-4">
@@ -227,7 +164,6 @@
                                                 <span class="text-muted text-size-small">orders weekly</span>
                                             </div>
                                         </div>
-
                                         <div class="col-md-4">
                                             <div class="content-group">
                                                 <h5 class="text-semibold no-margin"><i
@@ -236,7 +172,6 @@
                                                 <span class="text-muted text-size-small">orders monthly</span>
                                             </div>
                                         </div>
-
                                         <div class="col-md-4">
                                             <div class="content-group">
                                                 <h5 class="text-semibold no-margin"><i
@@ -246,39 +181,26 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="content-group-sm" id="app_sales"></div>
                                 <div id="monthly-sales-stats"></div>
                             </div>
                             <!-- /sales stats -->
-
                         </div>
                     </div>
                     <!-- /main charts -->
-
-
-
-
-
                 </div>
                 <!-- /dashboard content -->
-
-
                 <!-- Footer -->
                 <?php include 'includes/footer.php';?>
                 <!-- /footer -->
                 <script>
-
                 </script>
             </div>
             <!-- /content area -->
-
         </div>
         <!-- /main content -->
-
     </div>
     <!-- /page content -->
-
     </div>
     <!-- /page container -->
     <?php include 'includes/script.php'; ?>

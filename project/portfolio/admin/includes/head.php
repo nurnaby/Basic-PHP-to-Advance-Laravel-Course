@@ -13,4 +13,13 @@
     <link href="assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
+    <style>
+    .panel-flat>.panel-heading {
+        border-bottom: 1px solid #d6d4ce;
+    }
+
+    .btn {
+        margin-top: -10px;
+    }
+    </style>
 </head>

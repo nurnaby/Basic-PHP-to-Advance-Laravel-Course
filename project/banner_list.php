@@ -81,7 +81,7 @@
                             <h5 class="panel-title">Banner List</h5>
                             <div class="heading-elements">
                                 <ul class="icons-list">
-                                    <a href="banner_add.php" class="btn btn-primary mb-1">Add New</a>
+                                    <a href="" class="btn btn-primary mb-1">Add New</a>
                                     <!-- <li><a data-action="collapse"></a></li>
                                     <li><a data-action="reload"></a></li>
                                     <li><a data-action="close"></a></li> -->
@@ -90,8 +90,6 @@
                         </div>
 
                         <div class="panel-body">
-
-
                             <table class="table table-bordered datatable-basic">
                                 <thead>
                                     <tr>

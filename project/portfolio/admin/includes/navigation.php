@@ -7,7 +7,7 @@
             <li class="active"><a href="index.html"><i class="icon-home4"></i>
                     <span>Dashboard</span></a></li>
             <li>
-            <li class=""><a href="banner.php"><i class="icon-home4"></i>
+            <li class=""><a href="banner.php"><i class=" icon-image5"></i>
                     <span>Banners</span></a></li>
             <li>
             <li class=""><a href="index.html"><i class="icon-home4"></i>

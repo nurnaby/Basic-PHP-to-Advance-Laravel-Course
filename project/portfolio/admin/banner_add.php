@@ -81,7 +81,7 @@
                             <h5 class="panel-title">Banner List</h5>
                             <div class="heading-elements">
                                 <ul class="icons-list">
-                                    <a href="banner_add.php" class="btn btn-primary mb-1">Add New</a>
+                                    <a href="" class="btn btn-primary mb-1">Add New</a>
                                     <!-- <li><a data-action="collapse"></a></li>
                                     <li><a data-action="reload"></a></li>
                                     <li><a data-action="close"></a></li> -->
@@ -91,40 +91,6 @@
 
                         <div class="panel-body">
 
-
-                            <table class="table table-bordered datatable-basic">
-                                <thead>
-                                    <tr>
-                                        <th width:5%>SL</th>
-                                        <th width:20%>First Name</th>
-                                        <th width:20%>Last Name</th>
-                                        <th width:20%>Job Title</th>
-                                        <th width:20%>DOB</th>
-                                        <th width:5%>Status</th>
-                                        <th width:10% class="text-center">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <td>Marth</td>
-                                        <td><a href="#">Enright</a></td>
-                                        <td>Traffic Court Referee</td>
-                                        <td>22 Jun 1972</td>
-                                        <td><span class="label label-success">Active</span></td>
-                                        <td class="text-center">
-                                            <a href="#"><i class=" icon-pencil5"></i></a>
-                                            <a href="#"><i class=" icon-trash"></i></a>
-
-                                        </td>
-                                    </tr>
-
-
-
-                                    </tr>
-
-                                </tbody>
-                            </table>
                         </div>
 
 
