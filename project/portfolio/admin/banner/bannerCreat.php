@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'includes/head.php';?>
+<?php
+if (basename(__DIR__) != 'admin') {
+    $baseUrl = '../';
+    $isInternal = true;
+} else {
+    $baseUrl = '';
+    $isInternal = false;
+}
+
+include '../includes/head.php';?>
 
 <body>
     <!-- Main navbar -->
-    <?php include 'includes/mainNav.php'; ?>
+    <?php include '../includes/mainNav.php'; ?>
     <!-- /main navbar -->
     <!-- Page container -->
     <div class="page-container">
@@ -37,7 +46,7 @@
                     </div>
                     <!-- /user menu -->
                     <!-- Main navigation -->
-                    <?php include 'includes/navigation.php';?>
+                    <?php include '../includes/navigation.php';?>
                     <!-- /main navigation -->
                 </div>
             </div>
@@ -70,45 +79,48 @@
                             </div>
                         </div>
                         <div class="panel-body mt-5">
-                            <form class="form-horizontal" action="#">
-                                <fieldset class="content-group">
+                            <form class="form-horizontal" action="../contorller/bannerController.php" method="POST">
+                                <fieldset class="content-group mt-10">
+                                    <?php
+                                    if(isset($_GET['msg'])){
+                                    ?>
+                                    <div class="alert alert-success no-border">
+                                        <button type="button" class="close"
+                                            data-dismiss="alert"><span>&times;</span><span
+                                                class="sr-only">Close</span></button>
+                                        <span class="text-semibold">Succes!</span><?php echo $_GET['msg'];?>
+                                    </div>
+                                    <?php }?>
                                     <div class="form-group mt-10">
-                                        <label class="control-label col-lg-2">Default text input</label>
+                                        <label class="control-label col-lg-2" for="title">Title</label>
                                         <div class="col-lg-10">
-                                            <input type="text" class="form-control">
+                                            <input type="text" id="title" class="form-control" name="title">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2">Password</label>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="sub_title">Sub title</label>
                                         <div class="col-lg-10">
-                                            <input type="password" class="form-control">
+                                            <input type="text" id="sub_title" class="form-control" name="sub_title">
                                         </div>
                                     </div>
+
+
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2">Default select</label>
-                                        <div class="col-lg-10">
-                                            <select name="select" class="form-control">
-                                                <option value="opt1">Usual select box</option>
-                                                <option value="opt2">Option 2</option>
-                                                <option value="opt3">Option 3</option>
-                                                <option value="opt4">Option 4</option>
-                                                <option value="opt5">Option 5</option>
-                                                <option value="opt6">Option 6</option>
-                                                <option value="opt7">Option 7</option>
-                                                <option value="opt8">Option 8</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2">Textarea</label>
+                                        <label class="control-label col-lg-2" for="detaile">Detaile</label>
                                         <div class="col-lg-10">
                                             <textarea rows="5" cols="5" class="form-control"
-                                                placeholder="Default textarea"></textarea>
+                                                placeholder="Default textarea" id="detaile" name="details"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="images">Images</label>
+                                        <div class="col-lg-10">
+                                            <input type="file" id="images" class="form-control" name="images">
                                         </div>
                                     </div>
                                 </fieldset>
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Submit </button>
+                                    <button type="submit" class="btn btn-primary" name="saveBanner">Submit</button>
                                     <a href="banner_list.php" class="btn btn-default ml-5">Back to List</a>
                                 </div>
                             </form>
@@ -116,7 +128,7 @@
                     </div>
                     <!-- /basic datatable -->
                     <!-- Footer -->
-                    <?php include 'includes/footer.php';?>
+                    <?php include '../includes/footer.php';?>
                     <!-- /footer -->
                 </div>
                 <!-- /content area -->
@@ -126,7 +138,7 @@
         <!-- /page content -->
     </div>
     <!-- /page container -->
-    <?php include 'includes/script.php'; ?>
+    <?php include '../includes/script.php'; ?>
 </body>
 
 </html>

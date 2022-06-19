@@ -2,16 +2,22 @@
     <div class="category-content no-padding">
         <ul class="navigation navigation-main navigation-accordion">
             <!-- Main -->
-            <li class="active"><a href="index.php"><i class="icon-home4"></i>
+            <?php
+            $manuName= basename('_DIR_');
+            
+            ?>
+            <li class=<?php echo $manuName == 'admin' ? "active" : ''; ?>><a href="index.php"><i class="icon-home4"></i>
                     <span>Dashboard</span></a></li>
             <li>
-            <li class=""><a href="banner_list.php"><i class=" icon-image5"></i>
+            <li class=<?php echo $manuName == 'admin' ? "active" : ''; ?>><a
+                    href="<?php echo $isInternal == true ?'':'banner/';?>banner_list.php"><i class=" icon-image5"></i>
                     <span>Banners</span></a></li>
             <li>
-            <li class=""><a href="index.html"><i class="icon-home4"></i>
+            <li class=<?php echo $manuName == 'admin' ? "active" : ''; ?>><a
+                    href="<?php echo $isInternal == true ?'':'service/';?>service_list.php"><i class="icon-home4"></i>
                     <span>Service</span></a></li>
             <li>
-            <li class=""><a href="index.html"><i class="icon-home4"></i>
+            <li class=""><a href="#"><i class="icon-home4"></i>
                     <span>Sections</span></a></li>
             <li>
             <li class=""><a href="index.html"><i class="icon-home4"></i>

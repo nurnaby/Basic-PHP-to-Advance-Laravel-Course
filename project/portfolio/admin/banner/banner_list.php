@@ -1,10 +1,23 @@
+<?php
+require '../contorller/bdconfig.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'includes/head.php';?>
+
+<?php
+if (basename(__DIR__) != 'admin') {
+    $baseUrl = '../';
+    $isInternal = true;
+} else {
+    $baseUrl = '';
+    $isInternal = false;
+}
+ include '../includes/head.php';?>
+
 
 <body>
     <!-- Main navbar -->
-    <?php include 'includes/mainNav.php'; ?>
+    <?php include '../includes/mainNav.php'; ?>
     <!-- /main navbar -->
     <!-- Page container -->
     <div class="page-container">
@@ -37,7 +50,7 @@
                     </div>
                     <!-- /user menu -->
                     <!-- Main navigation -->
-                    <?php include 'includes/navigation.php';?>
+                    <?php include '../includes/navigation.php';?>
                     <!-- /main navigation -->
                 </div>
             </div>
@@ -74,35 +87,43 @@
                                 <thead>
                                     <tr>
                                         <th width:5%>SL</th>
-                                        <th width:20%>First Name</th>
-                                        <th width:20%>Last Name</th>
-                                        <th width:20%>Job Title</th>
-                                        <th width:20%>DOB</th>
-                                        <th width:5%>Status</th>
+                                        <th width:20%>Title</th>
+                                        <th width:20%>Subtitle</th>
+                                        <th width:25%>Details</th>
+                                        <th width:20%>Image</th>
                                         <th width:10% class="text-center">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    $selectquery= "SELECT * FROM banner";
+                                    $banner_list=mysqli_query($dbcon,$selectquery);
+                                    foreach($banner_list as $key =>$banner){
+                                        
+                                    
+                                    
+                                    
+                                    ?>
                                     <tr>
-                                        <th>1</th>
-                                        <td>Marth</td>
-                                        <td><a href="#">Enright</a></td>
-                                        <td>Traffic Court Referee</td>
-                                        <td>22 Jun 1972</td>
-                                        <td><span class="label label-success">Active</span></td>
+                                        <td><?php echo ++$key ?></td>
+                                        <td><?php echo $banner['title']; ?></td>
+                                        <td><?php echo $banner['sub_title']; ?></td>
+
+                                        <td><?php echo $banner['details']; ?></td>
+                                        <td><?php echo $banner['images']; ?></td>
                                         <td class="text-center">
                                             <a href="bannerUpdate.php"><i class=" icon-pencil5"></i></a>
                                             <a href="#"><i class=" icon-trash"></i></a>
                                         </td>
                                     </tr>
-                                    </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <!-- /basic datatable -->
                     <!-- Footer -->
-                    <?php include 'includes/footer.php';?>
+                    <?php include '../includes/footer.php';?>
                     <!-- /footer -->
                 </div>
                 <!-- /content area -->
@@ -112,7 +133,7 @@
         <!-- /page content -->
     </div>
     <!-- /page container -->
-    <?php include 'includes/script.php'; ?>
+    <?php include '../includes/script.php'; ?>
 </body>
 
 </html>

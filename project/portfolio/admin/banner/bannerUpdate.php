@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'includes/head.php';?>
+
+<?php
+if (basename(__DIR__) != 'admin') {
+    $baseUrl = '../';
+    $isInternal = true;
+} else {
+    $baseUrl = '';
+    $isInternal = false;
+}
+ include '../includes/head.php';?>
 
 <body>
     <!-- Main navbar -->
-    <?php include 'includes/mainNav.php'; ?>
+    <?php include '../includes/mainNav.php'; ?>
     <!-- /main navbar -->
     <!-- Page container -->
     <div class="page-container">
@@ -37,7 +46,7 @@
                     </div>
                     <!-- /user menu -->
                     <!-- Main navigation -->
-                    <?php include 'includes/navigation.php';?>
+                    <?php include '../includes/navigation.php';?>
                     <!-- /main navigation -->
                 </div>
             </div>
@@ -115,7 +124,7 @@
                     </div>
                     <!-- /basic datatable -->
                     <!-- Footer -->
-                    <?php include 'includes/footer.php';?>
+                    <?php include '../includes/footer.php';?>
                     <!-- /footer -->
                 </div>
                 <!-- /content area -->
@@ -125,7 +134,7 @@
         <!-- /page content -->
     </div>
     <!-- /page container -->
-    <?php include 'includes/script.php'; ?>
+    <?php include '../includes/script.php'; ?>
 </body>
 
 </html>
