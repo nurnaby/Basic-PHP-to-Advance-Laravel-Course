@@ -112,7 +112,8 @@ if (basename(__DIR__) != 'admin') {
                                         <td><?php echo $banner['details']; ?></td>
                                         <td><?php echo $banner['images']; ?></td>
                                         <td class="text-center">
-                                            <a href="bannerUpdate.php"><i class=" icon-pencil5"></i></a>
+                                            <a href="bannerUpdate.php?banner_id=<?php echo $banner['id'];?>"><i
+                                                    class=" icon-pencil5"></i></a>
                                             <a href="#"><i class=" icon-trash"></i></a>
                                         </td>
                                     </tr>
