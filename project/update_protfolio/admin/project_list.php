@@ -56,7 +56,7 @@ include 'contorller/bdconfig.php';
                 <div class="page-header">
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
-                            <li><a href="#"><i class="icon-image5 position-left"></i>Banner</a></li>
+                            <li><a href="#"><i class="icon-image5 position-left"></i>Project</a></li>
                             <li class="active">List</li>
                         </ul>
                     </div>
@@ -67,10 +67,10 @@ include 'contorller/bdconfig.php';
                     <!-- Basic datatable -->
                     <div class="panel panel-flat">
                         <div class="panel-heading">
-                            <h5 class="panel-title">Banner List</h5>
+                            <h5 class="panel-title">Project List</h5>
                             <div class="heading-elements">
                                 <ul class="icons-list">
-                                    <a href="bannerCreat.php" class="btn btn-primary mb-1">Add New</a>
+                                    <a href="projectCreat.php" class="btn btn-primary mb-1">Add New</a>
                                     <!-- <li><a data-action="collapse"></a></li>
                                     <li><a data-action="reload"></a></li>
                                     <li><a data-action="close"></a></li> -->
@@ -93,35 +93,38 @@ include 'contorller/bdconfig.php';
                                 <thead>
                                     <tr>
                                         <th width:5%>SL</th>
-                                        <th width:20%>Title</th>
-                                        <th width:20%>Sub title</th>
-                                        <th width:25%>Details</th>
-                                        <th width:20%>Images</th>
+                                        <th width:20%>Category Name</th>
+                                        <th width:20%>Project Name</th>
+                                        <th width:25%>project Link</th>
+                                        <th width:20%>Project Thumb</th>
                                         <th width:10% class="text-center">Action status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    $selectQuery= "SELECT * FROM banners";
-                                    $banner_list=mysqli_query($dbcon,$selectQuery);
-                                  foreach($banner_list as $key =>$banner){
+                                    $selectQuery= "SELECT our_projects.*,categories.category_name FROM `our_projects` 
+                                    INNER JOIN categories ON our_projects.category_id = categories.id
+                                    WHERE our_projects.active_status = 1";
+                                    $project_list=mysqli_query($dbcon,$selectQuery);
+
+                                  foreach($project_list as $key =>$Project){
                                     
                                     ?>
                                     <tr>
                                         <td><?php echo ++$key;?></td>
-                                        <td><?php echo $banner['title'];?></td>
-                                        <td><?php echo $banner['sub_title'];?></td>
-                                        <td><?php echo $banner['details'];?></td>
+                                        <td><?php echo $Project['category_name'];?></td>
+                                        <td><?php echo $Project['project_name'];?></td>
+                                        <td><?php echo $Project['project_link'];?></td>
                                         <td>
 
                                             <img class="img-responsive" width="80" height="80"
-                                                src="<?php echo 'uploads/'.$banner['images'];?>" />
+                                                src="<?php echo 'uploads/'.$Project['project_thumb'];?>" />
 
                                         </td>
                                         <td class="text-center">
-                                            <a href="bannerUpdate.php?banner_id=<?php echo $banner['id'];?>"><i
+                                            <a href="bannerUpdate.php?banner_id=<?php echo $Project['id'];?>"><i
                                                     class=" icon-pencil5"></i></a>
-                                            <a href="bannerDelete.php?banner_id=<?php echo $banner['id'];?>"><i
+                                            <a href="bannerDelete.php?banner_id=<?php echo $Project['id'];?>"><i
                                                     class=" icon-trash"></i></a>
                                         </td>
                                     </tr>

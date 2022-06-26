@@ -14,7 +14,7 @@
             <li class=""><a href="sections_list.php"><i class="icon-home4"></i>
                     <span>Sections</span></a></li>
             <li>
-            <li class=""><a href="index.html"><i class="icon-home4"></i>
+            <li class=""><a href="project_list.php"><i class="icon-home4"></i>
                     <span>Our Project</span></a></li>
             <li>
             <li class=""><a href="index.html"><i class="icon-home4"></i>
@@ -23,7 +23,7 @@
             <li class=""><a href="index.html"><i class="icon-home4"></i>
                     <span>Our Staff</span></a></li>
             <li>
-            <li class=""><a href="index.html"><i class="icon-home4"></i>
+            <li class=""><a href="contactMessates.php"><i class="icon-home4"></i>
                     <span>Contact Messages</span></a></li>
             <li>
                 <a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>

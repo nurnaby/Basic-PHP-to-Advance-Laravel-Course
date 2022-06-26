@@ -81,29 +81,25 @@ include 'contorller/bdconfig.php';
                             <table class="table table-bordered datatable-basic">
                                 <thead>
                                     <tr>
-                                        <th width:5%>SL</th>
-                                        <th width:20%>Title</th>
-                                        <th width:20%>Sub title</th>
-                                        <th width:25%>Details</th>
-                                        <th width:20%>Page no</th>
-                                        <th width:10% class="text-center">Action status</th>
+                                        <th width:30%>SL</th>
+                                        <th width:35%>designation name</th>
+
+                                        <th width:35% class="text-center">Action status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    $selectQuery= "SELECT * FROM sections";
-                                    $section_list=mysqli_query($dbcon,$selectQuery);
-                                  foreach($section_list as $key =>$section){
+                                    $selectQuery= "SELECT * FROM designatoins";
+                                    $designatoins_list=mysqli_query($dbcon,$selectQuery);
+                                  foreach($designatoins_list as $key =>$designatoins){
                                     
                                     ?>
                                     <tr>
                                         <td><?php echo ++$key;?></td>
-                                        <td><?php echo $section['title'];?></td>
-                                        <td><?php echo $section['sub_title'];?></td>
-                                        <td><?php echo $section['details'];?></td>
-                                        <td><?php echo $section['page_no'];?></td>
+                                        <td><?php echo $designatoins['designation_name'];?></td>
+
                                         <td class="text-center">
-                                            <a href="sectionUpdate.php?section_id=<?php echo $section['id']?>"><i
+                                            <a href="sectionUpdate.php?section_id=<?php echo $designatoins['id']?>"><i
                                                     class=" icon-pencil5"></i></a>
                                             <a href="#"><i class=" icon-trash"></i></a>
                                         </td>

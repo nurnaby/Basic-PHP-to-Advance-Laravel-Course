@@ -56,7 +56,7 @@ include 'contorller/bdconfig.php';
                 <div class="page-header">
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
-                            <li><a href="#"><i class="icon-image5 position-left"></i>Banner</a></li>
+                            <li><a href="#"><i class="icon-image5 position-left"></i>Contact messages</a></li>
                             <li class="active">List</li>
                         </ul>
                     </div>
@@ -67,62 +67,38 @@ include 'contorller/bdconfig.php';
                     <!-- Basic datatable -->
                     <div class="panel panel-flat">
                         <div class="panel-heading">
-                            <h5 class="panel-title">Banner List</h5>
-                            <div class="heading-elements">
-                                <ul class="icons-list">
-                                    <a href="bannerCreat.php" class="btn btn-primary mb-1">Add New</a>
-                                    <!-- <li><a data-action="collapse"></a></li>
-                                    <li><a data-action="reload"></a></li>
-                                    <li><a data-action="close"></a></li> -->
-                                </ul>
-                            </div>
+                            <h5 class="panel-title">Contact messages List</h5>
+
                         </div>
                         <div class="panel-body">
-                            <?php
-                                    if(isset($_GET['msg'])){
-                                    ?>
-                            <div class="alert alert-success no-border">
-                                <button type="button" class="close" data-dismiss="alert"><span>&times;</span><span
-                                        class="sr-only">Close</span></button>
-                                <span class="text-semibold">Succes!</span><?php echo $_GET['msg'];?>
-                            </div>
-                            <?php }?>
-
-
                             <table class="table table-bordered datatable-basic">
                                 <thead>
                                     <tr>
                                         <th width:5%>SL</th>
-                                        <th width:20%>Title</th>
-                                        <th width:20%>Sub title</th>
-                                        <th width:25%>Details</th>
-                                        <th width:20%>Images</th>
+                                        <th width:20%>Name</th>
+                                        <th width:20%>Email</th>
+                                        <th width:25%>Subject</th>
+                                        <th width:20%>Message</th>
                                         <th width:10% class="text-center">Action status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    $selectQuery= "SELECT * FROM banners";
-                                    $banner_list=mysqli_query($dbcon,$selectQuery);
-                                  foreach($banner_list as $key =>$banner){
+                                    $selectQuery= "SELECT * FROM contact_messages";
+                                    $contact_messages_list=mysqli_query($dbcon,$selectQuery);
+                                  foreach($contact_messages_list as $key =>$Contact_messages){
                                     
                                     ?>
                                     <tr>
                                         <td><?php echo ++$key;?></td>
-                                        <td><?php echo $banner['title'];?></td>
-                                        <td><?php echo $banner['sub_title'];?></td>
-                                        <td><?php echo $banner['details'];?></td>
-                                        <td>
-
-                                            <img class="img-responsive" width="80" height="80"
-                                                src="<?php echo 'uploads/'.$banner['images'];?>" />
-
-                                        </td>
+                                        <td><?php echo $Contact_messages['name'];?></td>
+                                        <td><?php echo $Contact_messages['email'];?></td>
+                                        <td><?php echo $Contact_messages['subject'];?></td>
+                                        <td><?php echo $Contact_messages['message'];?></td>
                                         <td class="text-center">
-                                            <a href="bannerUpdate.php?banner_id=<?php echo $banner['id'];?>"><i
+                                            <a href="sectionUpdate.php?section_id=<?php echo $Contact_messages['id']?>"><i
                                                     class=" icon-pencil5"></i></a>
-                                            <a href="bannerDelete.php?banner_id=<?php echo $banner['id'];?>"><i
-                                                    class=" icon-trash"></i></a>
+                                            <a href="#"><i class=" icon-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php }?>

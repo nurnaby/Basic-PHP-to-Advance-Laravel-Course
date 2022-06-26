@@ -78,6 +78,15 @@ include 'contorller/bdconfig.php';
                             </div>
                         </div>
                         <div class="panel-body">
+                            <?php
+                                    if(isset($_GET['msg'])){
+                                    ?>
+                            <div class="alert alert-success no-border">
+                                <button type="button" class="close" data-dismiss="alert"><span>&times;</span><span
+                                        class="sr-only">Close</span></button>
+                                <span class="text-semibold">Succes!</span><?php echo $_GET['msg'];?>
+                            </div>
+                            <?php }?>
                             <table class="table table-bordered datatable-basic">
                                 <thead>
                                     <tr>
@@ -105,7 +114,8 @@ include 'contorller/bdconfig.php';
                                         <td class="text-center">
                                             <a href="sectionUpdate.php?section_id=<?php echo $section['id']?>"><i
                                                     class=" icon-pencil5"></i></a>
-                                            <a href="#"><i class=" icon-trash"></i></a>
+                                            <a href="sectionDelete.php?section_id=<?php echo $section['id']?>"><i
+                                                    class=" icon-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php }?>
