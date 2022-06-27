@@ -2,7 +2,6 @@
 require 'contorller/bdconfig.php';
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php';?>
@@ -53,8 +52,8 @@ require 'contorller/bdconfig.php';
                 <div class="page-header">
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
-                            <li><a href="#"><i class="icon-image5 position-left"></i>Designation</a></li>
-                            <li class="active">UPdate</li>
+                            <li><a href="#"><i class="icon-image5 position-left"></i>Staff</a></li>
+                            <li class="active">creat</li>
                         </ul>
                     </div>
                 </div>
@@ -64,19 +63,12 @@ require 'contorller/bdconfig.php';
                     <!-- Basic datatable -->
                     <div class="panel panel-flat">
                         <div class="panel-heading">
-                            <h5 class="panel-title">Dedignation Update</h5>
+                            <h5 class="panel-title">Staff Creat</h5>
 
                         </div>
                         <div class="panel-body mt-5">
-                            <form class="form-horizontal" action="contorller/categoryController.php" method="POST"
+                            <form class="form-horizontal" action="contorller/staffController.php" method="POST"
                                 enctype="multipart/form-data">
-                                <?php 
-                                if(isset($_GET['category_id'])){
-                                    $category_id = $_GET['category_id'];
-                                    $getSinglDataQry = "SELECT * FROM categories WHERE id='{$category_id}'";
-                                    $getResult = mysqli_query($dbcon,$getSinglDataQry);
-                                }
-                                ?>
                                 <fieldset class="content-group mt-10">
                                     <?php
                                     if(isset($_GET['msg'])){
@@ -89,26 +81,68 @@ require 'contorller/bdconfig.php';
                                     </div>
                                     <?php }?>
                                     <?php
-                                    foreach($getResult as $key => $category){
-                                        
+                                    $selectQuery= "SELECT * FROM designatoins WHERE active_status=1";
+                                    $designatoins=mysqli_query($dbcon,$selectQuery);
+                                    
                                     ?>
-                                    <input type="hidden" class="form-control" name="category_id"
-                                        value="<?php echo $category['id']?>">
+
                                     <div class="form-group mt-10">
-                                        <label class="control-label col-lg-2" for="category_name">Category Name</label>
+                                        <label class="control-label col-lg-2" for="designation_id">Designations</label>
                                         <div class="col-lg-10">
-                                            <input type="text" id="category_name" class="form-control"
-                                                name="category_name" value="<?php echo $category['category_name']?>">
+                                            <select name="designation_id" class="form-control" id="designation_id">
+                                                <option value="">select designation</option>
+                                                <?php
+                                                foreach($designatoins as $key=> $designation){
+
+                                                ?>
+                                                <option value="<?php echo $designation['id']?>">
+                                                    <?php echo $designation['designation_name']?></option>
+                                                <?php }?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="staff_name">Staff Name</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="staff_name" class="form-control" name="staff_name">
                                         </div>
                                     </div>
 
-                                    <?php }?>
 
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="staff_image">Staff Image</label>
+                                        <div class="col-lg-10">
+                                            <input type="file" id="staff_image" class="form-control" name="staff_image">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="facebook">Facebook</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="facebook" class="form-control" name="facebook">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="twitter">twitter</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="twitter" class="form-control" name="twitter">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="linkedin">linkedin</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="linkedin" class="form-control" name="linkedin">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="instagram">instagram</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" id="instagram" class="form-control" name="instagram">
+                                        </div>
+                                    </div>
                                 </fieldset>
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary"
-                                        name="updateDesignation">Submit</button>
-                                    <a href="category_list.php" class="btn btn-default ml-5">Back to List</a>
+                                    <button type="submit" class="btn btn-primary" name="saveStaff">Submit</button>
+                                    <a href="staff_list.php" class="btn btn-default ml-5">Back to List</a>
                                 </div>
                             </form>
                         </div>

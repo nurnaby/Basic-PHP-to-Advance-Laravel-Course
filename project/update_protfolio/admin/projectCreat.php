@@ -127,7 +127,7 @@ require 'contorller/bdconfig.php';
                                 </fieldset>
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary" name="saveProject">Submit</button>
-                                    <a href="banner_list.php" class="btn btn-default ml-5">Back to List</a>
+                                    <a href="project_list.php" class="btn btn-default ml-5">Back to List</a>
                                 </div>
                             </form>
                         </div>

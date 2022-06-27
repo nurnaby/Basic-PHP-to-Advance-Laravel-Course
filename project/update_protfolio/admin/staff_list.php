@@ -1,5 +1,5 @@
 <?php
-$page = 'project';
+$page = 'staff';
 include 'contorller/bdconfig.php';
 
 ?>
@@ -57,7 +57,7 @@ include 'contorller/bdconfig.php';
                 <div class="page-header">
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
-                            <li><a href="#"><i class="icon-image5 position-left"></i>Project</a></li>
+                            <li><a href="#"><i class="icon-image5 position-left"></i>staff</a></li>
                             <li class="active">List</li>
                         </ul>
                     </div>
@@ -68,10 +68,10 @@ include 'contorller/bdconfig.php';
                     <!-- Basic datatable -->
                     <div class="panel panel-flat">
                         <div class="panel-heading">
-                            <h5 class="panel-title">Project List</h5>
+                            <h5 class="panel-title"> staff List</h5>
                             <div class="heading-elements">
                                 <ul class="icons-list">
-                                    <a href="projectCreat.php" class="btn btn-primary mb-1">Add New</a>
+                                    <a href="staffCreat.php" class="btn btn-primary mb-1">Add New</a>
                                     <!-- <li><a data-action="collapse"></a></li>
                                     <li><a data-action="reload"></a></li>
                                     <li><a data-action="close"></a></li> -->
@@ -94,38 +94,43 @@ include 'contorller/bdconfig.php';
                                 <thead>
                                     <tr>
                                         <th width:5%>SL</th>
-                                        <th width:20%>Category Name</th>
-                                        <th width:20%>Project Name</th>
-                                        <th width:25%>project Link</th>
-                                        <th width:20%>Project Thumb</th>
+                                        <th width:20%>staff_name</th>
+                                        <th width:10%>designation Name</th>
+                                        <th width:15%>instagram</th>
+                                        <th width:10%>twitter</th>
+                                        <th width:10%>facebook</th>
+                                        <th width:10%>linkedin</th>
+                                        <th width:10%>staff_image</th>
                                         <th width:10% class="text-center">Action status</th>
                                     </tr>
-                                </thead>
+                                </thead>Our staff
                                 <tbody>
                                     <?php 
-                                    $selectQuery= "SELECT our_projects.*,categories.category_name FROM `our_projects` 
-                                    INNER JOIN categories ON our_projects.category_id = categories.id
-                                    WHERE our_projects.active_status = 1";
-                                    $project_list=mysqli_query($dbcon,$selectQuery);
-
-                                  foreach($project_list as $key =>$Project){
+                                    $selectQuery= "SELECT our_staff.*,designatoins.designation_name FROM `our_staff` 
+                                    INNER JOIN designatoins ON our_staff.designation_id = designatoins.id
+                                    WHERE our_staff.active_status= 1";
+                                    $staff_list=mysqli_query($dbcon,$selectQuery);
+                                  foreach($staff_list as $key =>$staff){
                                     
                                     ?>
                                     <tr>
                                         <td><?php echo ++$key;?></td>
-                                        <td><?php echo $Project['category_name'];?></td>
-                                        <td><?php echo $Project['project_name'];?></td>
-                                        <td><?php echo $Project['project_link'];?></td>
+                                        <td><?php echo $staff['staff_name'];?></td>
+                                        <td><?php echo $staff['designation_name'];?></td>
+                                        <td><?php echo $staff['instagram'];?></td>
+                                        <td><?php echo $staff['twitter'];?></td>
+                                        <td><?php echo $staff['facebook'];?></td>
+                                        <td><?php echo $staff['linkedin'];?></td>
                                         <td>
 
                                             <img class="img-responsive" width="80" height="80"
-                                                src="<?php echo 'uploads/'.$Project['project_thumb'];?>" />
+                                                src="<?php echo 'uploads/'.$staff['staff_image'];?>" />
 
                                         </td>
                                         <td class="text-center">
-                                            <a href="projectUpdate.php?project_id=<?php echo $Project['id'];?>"><i
+                                            <a href="staffUpdate.php?staff_id=<?php echo $staff['id'];?>"><i
                                                     class=" icon-pencil5"></i></a>
-                                            <a href="projectDelete.php?project_id=<?php echo $Project['id'];?>"><i
+                                            <a href="staffDelete.php?staff_id=<?php echo $staff['id'];?>"><i
                                                     class=" icon-trash"></i></a>
                                         </td>
                                     </tr>
