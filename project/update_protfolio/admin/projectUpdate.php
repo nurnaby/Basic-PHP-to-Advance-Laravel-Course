@@ -6,11 +6,6 @@ require 'contorller/bdconfig.php';
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php';?>
-<style>
-/* .btn-default {
-    display: none;
-} */
-</style>
 
 <body>
     <!-- Main navbar -->
@@ -58,8 +53,8 @@ require 'contorller/bdconfig.php';
                 <div class="page-header">
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
-                            <li><a href="#"><i class="icon-image5 position-left"></i>Banner</a></li>
-                            <li class="active">List</li>
+                            <li><a href="#"><i class="icon-image5 position-left"></i>Project</a></li>
+                            <li class="active">creat</li>
                         </ul>
                     </div>
                 </div>
@@ -69,18 +64,11 @@ require 'contorller/bdconfig.php';
                     <!-- Basic datatable -->
                     <div class="panel panel-flat">
                         <div class="panel-heading">
-                            <h5 class="panel-title">Banner Creat</h5>
-                            <div class="heading-elements">
-                                <ul class="icons-list">
-                                    <a href="" class="btn btn-primary mb-1">Add New</a>
-                                    <!-- <li><a data-action="collapse"></a></li>
-                                    <li><a data-action="reload"></a></li>
-                                    <li><a data-action="close"></a></li> -->
-                                </ul>
-                            </div>
+                            <h5 class="panel-title">Project Creat</h5>
+
                         </div>
                         <div class="panel-body mt-5">
-                            <form class="form-horizontal" action="contorller/bannerController.php" method="POST"
+                            <form class="form-horizontal" action="contorller/projectController.php" method="POST"
                                 enctype="multipart/form-data">
                                 <fieldset class="content-group mt-10">
                                     <?php
@@ -93,48 +81,53 @@ require 'contorller/bdconfig.php';
                                         <span class="text-semibold">Succes!</span><?php echo $_GET['msg'];?>
                                     </div>
                                     <?php }?>
+                                    <?php
+                                    $selectQuery= "SELECT * FROM categories WHERE active_status=1";
+                                    $category_list=mysqli_query($dbcon,$selectQuery);
+                                    
+                                    ?>
+
                                     <div class="form-group mt-10">
-                                        <label class="control-label col-lg-2" for="title">Title</label>
+                                        <label class="control-label col-lg-2" for="category_id">Category</label>
                                         <div class="col-lg-10">
-                                            <input type="text" id="title" class="form-control" name="title">
+                                            <select name="category_id" class="form-control" id="category_id">
+                                                <option value="">select category</option>
+                                                <?php
+                                                foreach($category_list as $key=> $category){
+
+                                                ?>
+                                                <option value="<?php echo $category['id']?>">
+                                                    <?php echo $category['category_name']?></option>
+                                                <?php }?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group mt-10">
-                                        <label class="control-label col-lg-2" for="sub_title">Sub title</label>
+                                        <label class="control-label col-lg-2" for="project_name">Project Name</label>
                                         <div class="col-lg-10">
-                                            <input type="text" id="sub_title" class="form-control" name="sub_title">
+                                            <input type="text" id="project_name" class="form-control"
+                                                name="project_name">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="detaile">Detaile</label>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="project_link">Project Link</label>
                                         <div class="col-lg-10">
-                                            <textarea rows="5" cols="5" class="form-control"
-                                                placeholder="Default textarea" id="detaile" name="details"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-2 control-label text-semibold" for="images">Images</label>
-                                        <div class="col-lg-10">
-                                            <input type="file" class="file-input" id="images" name="images"
-                                                accept="image/*, video/*">
-                                            <span class="help-block">Allow only <code>image</code> and
-                                                <code>video</code> file types to be uploaded. You can configure the
-                                                condition for validating the file types using
-                                                <code>`fileTypeSettings`</code>.</span>
+                                            <input type="text" id="project_link" class="form-control"
+                                                name="project_link">
                                         </div>
                                     </div>
 
-                                    <!-- <div class="form-group mt-10">
-                                        <label class="control-label col-lg-2" for="images">Images</label>
+                                    <div class="form-group mt-10">
+                                        <label class="control-label col-lg-2" for="project_thumb">Project Thumb</label>
                                         <div class="col-lg-10">
-                                            <input type="file" id="images" class="form-control" name="images">
+                                            <input type="file" id="project_thumb" class="form-control"
+                                                name="project_thumb">
                                         </div>
-                                    </div> -->
-
+                                    </div>
                                 </fieldset>
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary" name="saveBanner">Submit</button>
-                                    <a href="banner_list.php" class="btn btn-default ml-5">Back to List</a>
+                                    <button type="submit" class="btn btn-primary" name="saveProject">Submit</button>
+                                    <a href="project_list.php" class="btn btn-default ml-5">Back to List</a>
                                 </div>
                             </form>
                         </div>

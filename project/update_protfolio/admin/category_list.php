@@ -124,6 +124,7 @@ include 'contorller/bdconfig.php';
     </div>
     <!-- /page container -->
     <?php include 'includes/script.php'; ?>
+
 </body>
 
 </html>

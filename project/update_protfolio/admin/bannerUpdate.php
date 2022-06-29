@@ -6,6 +6,11 @@ require 'contorller/bdconfig.php';
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php';?>
+<style>
+/* .btn-default {
+    display: none;
+} */
+</style>
 
 <body>
     <!-- Main navbar -->
@@ -54,7 +59,7 @@ require 'contorller/bdconfig.php';
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
                             <li><a href="#"><i class="icon-image5 position-left"></i>Banner</a></li>
-                            <li class="active">update</li>
+                            <li class="active">List</li>
                         </ul>
                     </div>
                 </div>
@@ -71,9 +76,13 @@ require 'contorller/bdconfig.php';
                             <form class="form-horizontal" action="contorller/bannerController.php" method="POST"
                                 enctype="multipart/form-data">
                                 <?php
-                                $banner_id = $_GET['banner_id']; 
-                                $getSingleDataQry = "SELECT * FROM banners WHERE id={$banner_id}";
-                                $getResult = mysqli_query($dbcon,$getSingleDataQry);
+                                if(isset($_GET['banner_id'])){
+                                     $banner_id = $_GET['banner_id'];
+                                     $getSinglDataQry = "SELECT * FROM banners WHERE id='{$banner_id}'";
+                                     $getResult = mysqli_query($dbcon,$getSinglDataQry);
+                                    
+                                }
+                                
                                 ?>
                                 <fieldset class="content-group mt-10">
                                     <?php
@@ -87,21 +96,25 @@ require 'contorller/bdconfig.php';
                                     </div>
                                     <?php }?>
 
-                                    <?php 
+                                    <?php
+                                    if(isset($getResult)){
                                     foreach($getResult as $key => $banner){
                                     ?>
+                                    <input type="hidden" class="form-control" name="banner_id"
+                                        value="<?php echo $banner['id'] ?>">
+
                                     <div class="form-group mt-10">
                                         <label class="control-label col-lg-2" for="title">Title</label>
                                         <div class="col-lg-10">
                                             <input type="text" id="title" class="form-control" name="title"
-                                                value="<?php echo $banner['title'];?>">
+                                                value="<?php echo $banner['title'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group mt-10">
                                         <label class="control-label col-lg-2" for="sub_title">Sub title</label>
                                         <div class="col-lg-10">
                                             <input type="text" id="sub_title" class="form-control" name="sub_title"
-                                                value="<?php echo $banner['sub_title'];?>">
+                                                value="<?php echo $banner['sub_title'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -109,20 +122,54 @@ require 'contorller/bdconfig.php';
                                         <div class="col-lg-10">
                                             <textarea rows="5" cols="5" class="form-control"
                                                 placeholder="Default textarea" id="detaile"
-                                                name="details"> <?php echo $banner['details'];?> </textarea>
+                                                name="details"><?php echo $banner['details'] ?> </textarea>
                                         </div>
                                     </div>
-                                    <div class="form-group mt-10">
-                                        <label class="control-label col-lg-2" for="images">Images</label>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label text-semibold" for="image">Image</label>
                                         <div class="col-lg-10">
-                                            <input type="text" id="images" class="form-control" name="images"
-                                                value="<?php echo $banner['images'];?>">
+                                            <input type="file" name="images" class="file-input-extensions" id="image">
+                                            <span class="help-block">Allow extensions: <code>jpg</code>,
+                                                <code>png</code> and <code>jpeg</code> and Allow Size:
+                                                <code>640 * 426</code> Only</span>
+
+
+                                            <div class="file-preview" id="custom_file_preview">
+                                                <div class="close fileinput-remove text-right" id="custom_close">×</div>
+                                                <div class="file-preview-thumbnails">
+                                                    <div class="file-preview-frame" id="preview-1603644588432-0">
+                                                        <img src="<?php echo 'uploads/'.$banner['images']; ?>"
+                                                            class="file-preview-image" title="" alt=""
+                                                            style="width:auto;height:160px;">
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="file-preview-status text-center text-success"></div>
+                                                <div class="kv-fileinput-error file-error-message"
+                                                    style="display: none;"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <?php } ?>
+
+
+                                    <!-- <div class="form-group">
+                                        <label class="col-lg-2 control-label text-semibold" for="images">Images</label>
+                                        <div class="col-lg-10">
+                                            <input type="file" class="file-input" id="images" name="images"
+                                                accept="image/*, video/*">
+                                            <span class="help-block">Allow only <code>image</code> and
+                                                <code>video</code> file types to be uploaded. You can configure the
+                                                condition for validating the file types using
+                                                <code>`fileTypeSettings`</code>.</span>
+                                        </div>
+                                    </div> -->
+                                    <?php }}?>
+
+
+
                                 </fieldset>
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary" name="UpdateBanner">Submit</button>
+                                    <button type="submit" class="btn btn-primary" name="saveUpdate">Submit</button>
                                     <a href="banner_list.php" class="btn btn-default ml-5">Back to List</a>
                                 </div>
                             </form>

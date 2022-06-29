@@ -4,9 +4,6 @@ include 'contorller/bdconfig.php';
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php';?>
