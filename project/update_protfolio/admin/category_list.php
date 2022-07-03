@@ -79,7 +79,7 @@ include 'contorller/bdconfig.php';
                             </div>
                         </div>
                         <div class="panel-body">
-                            <table class="table table-bordered datatable-basic">
+                            <table class="table table-bordered datatable-basic" id="courseTable">
                                 <thead>
                                     <tr>
                                         <th width:5%>SL</th>
@@ -124,6 +124,19 @@ include 'contorller/bdconfig.php';
     </div>
     <!-- /page container -->
     <?php include 'includes/script.php'; ?>
+    <script type="text/javascript">
+    // $('#courseTable').DataTable();
+
+    $('#courseTable').DataTable({
+        dom: 'lBfrtip',
+        "iDisplayLength": 10,
+        "lengthMenu": [10, 25, 30, 50],
+        columnDefs: [{
+            'orderable': false,
+            "targets": 5
+        }]
+    });
+    </script>
 
 </body>
 
