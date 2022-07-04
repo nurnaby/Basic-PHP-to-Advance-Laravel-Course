@@ -1,5 +1,5 @@
 <?php
-$page = 'staff';
+$page = 'contactus';
 include 'contorller/bdconfig.php';
 
 ?>
@@ -57,7 +57,7 @@ include 'contorller/bdconfig.php';
                 <div class="page-header">
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
-                            <li><a href="#"><i class="icon-image5 position-left"></i>staff</a></li>
+                            <li><a href="#"><i class="icon-image5 position-left"></i>Contact Us</a></li>
                             <li class="active">List</li>
                         </ul>
                     </div>
@@ -68,10 +68,10 @@ include 'contorller/bdconfig.php';
                     <!-- Basic datatable -->
                     <div class="panel panel-flat">
                         <div class="panel-heading">
-                            <h5 class="panel-title"> staff List</h5>
+                            <h5 class="panel-title">Contact Us List</h5>
                             <div class="heading-elements">
                                 <ul class="icons-list">
-                                    <a href="staffCreat.php" class="btn btn-primary mb-1">Add New</a>
+                                    <a href="sectionCreat.php" class="btn btn-primary mb-1">Add New</a>
                                     <!-- <li><a data-action="collapse"></a></li>
                                     <li><a data-action="reload"></a></li>
                                     <li><a data-action="close"></a></li> -->
@@ -88,49 +88,34 @@ include 'contorller/bdconfig.php';
                                 <span class="text-semibold">Succes!</span><?php echo $_GET['msg'];?>
                             </div>
                             <?php }?>
-
-
                             <table class="table table-bordered datatable-basic">
                                 <thead>
                                     <tr>
                                         <th width:5%>SL</th>
-                                        <th width:20%>staff_name</th>
-                                        <th width:10%>designation Name</th>
-                                        <th width:15%>instagram</th>
-                                        <th width:10%>twitter</th>
-                                        <th width:10%>facebook</th>
-                                        <th width:10%>linkedin</th>
-                                        <th width:10%>staff_image</th>
+                                        <th width:20%>ADDRESS</th>
+                                        <th width:20%>CONTACT NUMBER</th>
+                                        <th width:25%>EMAIL ADDRESS</th>
+                                        <th width:20%>WEBSITE</th>
                                         <th width:10% class="text-center">Action status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    $selectQuery= "SELECT our_staff.*,designatoins.designation_name FROM `our_staff` 
-                                    INNER JOIN designatoins ON our_staff.designation_id = designatoins.id
-                                    WHERE our_staff.active_status= 1";
-                                    $staff_list=mysqli_query($dbcon,$selectQuery);
-                                  foreach($staff_list as $key =>$staff){
+                                    $selectQuery= "SELECT * FROM sections WHERE section_staus=1";
+                                    $section_list=mysqli_query($dbcon,$selectQuery);
+                                  foreach($section_list as $key =>$section){
                                     
                                     ?>
                                     <tr>
                                         <td><?php echo ++$key;?></td>
-                                        <td><?php echo $staff['staff_name'];?></td>
-                                        <td><?php echo $staff['designation_name'];?></td>
-                                        <td><?php echo $staff['instagram'];?></td>
-                                        <td><?php echo $staff['twitter'];?></td>
-                                        <td><?php echo $staff['facebook'];?></td>
-                                        <td><?php echo $staff['linkedin'];?></td>
-                                        <td>
-
-                                            <img class="img-responsive" width="80" height="80"
-                                                src="<?php echo 'uploads/'.$staff['staff_image'];?>" />
-
-                                        </td>
+                                        <td><?php echo $section['title'];?></td>
+                                        <td><?php echo $section['sub_title'];?></td>
+                                        <td><?php echo $section['details'];?></td>
+                                        <td><?php echo $section['page_no'];?></td>
                                         <td class="text-center">
-                                            <a href="staffUpdate.php?staff_id=<?php echo $staff['id'];?>"><i
+                                            <a href="sectionUpdate.php?section_id=<?php echo $section['id']?>"><i
                                                     class=" icon-pencil5"></i></a>
-                                            <a href="staffDelete.php?staff_id=<?php echo $staff['id'];?>"><i
+                                            <a href="sectionDelete.php?section_id=<?php echo $section['id']?>"><i
                                                     class=" icon-trash"></i></a>
                                         </td>
                                     </tr>

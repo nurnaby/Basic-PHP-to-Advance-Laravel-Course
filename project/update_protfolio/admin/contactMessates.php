@@ -85,7 +85,7 @@ include 'contorller/bdconfig.php';
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    $selectQuery= "SELECT * FROM contact_messages";
+                                    $selectQuery= "SELECT * FROM contact_messages WHERE active_status=1";
                                     $contact_messages_list=mysqli_query($dbcon,$selectQuery);
                                   foreach($contact_messages_list as $key =>$Contact_messages){
                                     
@@ -97,9 +97,11 @@ include 'contorller/bdconfig.php';
                                         <td><?php echo $Contact_messages['subject'];?></td>
                                         <td><?php echo $Contact_messages['message'];?></td>
                                         <td class="text-center">
-                                            <a href="sectionUpdate.php?section_id=<?php echo $Contact_messages['id']?>"><i
-                                                    class=" icon-pencil5"></i></a>
-                                            <a href="#"><i class=" icon-trash"></i></a>
+                                            <!-- <a href="sectionUpdate.php?section_id=<?php echo $Contact_messages['id']?>"><i
+                                                    class=" icon-pencil5"></i></a> -->
+                                            <a
+                                                href="contactmessageDelet.php?contactMess_id=<?php echo $Contact_messages['id'];?>"><i
+                                                    class=" icon-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php }?>

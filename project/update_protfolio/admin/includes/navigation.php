@@ -29,7 +29,12 @@
             <li>
             <li class="<?php if($page=='contact'){echo 'active';}?>"><a href="contactMessates.php"><i
                         class="icon-home4"></i>
-                    <span>Contact Messages</span></a></li>
+                    <span>Contact Messages</span></a>
+            </li>
+            <li class="<?php if($page=='contactus'){echo 'active';}?>"><a href="contactUs.php"><i
+                        class="icon-home4"></i>
+                    <span>Contact Us</span></a>
+            </li>
             <li>
                 <a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>
                 <ul>

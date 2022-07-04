@@ -61,7 +61,7 @@ require_once 'admin/contorller/bdconfig.php';
                             data-scrollax=" properties: { translateY: '70%' }">
                             <div class="text">
                                 <span class="subheading"><?php echo $bannerItem['title']; ?></span>
-                                <h1 class="mb-4 mt-3"><?php echo $bannerItem['sub_title']; ?> <span>Impression</span>
+                                <h1 class="mb-4 mt-3"><?php echo $bannerItem['sub_title']; ?>
                                 </h1>
                                 <p><?php echo $bannerItem['details']; ?></p>
                                 <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Get in touch</a></p>
@@ -211,15 +211,29 @@ require_once 'admin/contorller/bdconfig.php';
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
+                            <?php 
+                                    $selectQuery= "SELECT * FROM services LIMIT 4";
+                                    $service_list=mysqli_query($dbcon,$selectQuery);
+                                  foreach($service_list as $key =>$service){
+                                    
+                                    ?>
+
+
                             <a href="#" class="services-wrap ftco-animate">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="ion-ios-arrow-back"></span>
                                     <span class="ion-ios-arrow-forward"></span>
                                 </div>
-                                <h2>Market Research</h2>
-                                <p>Even the all-powerful Pointing has no control about the blind.</p>
+                                <h2><?php echo $service['service_name'];?></h2>
+                                <p><?php echo $service['service_details'];?></p>
                             </a>
-                            <a href="#" class="services-wrap ftco-animate">
+                            <?php
+                                  }
+                                    ?>
+
+
+
+                            <!-- <a href="#" class="services-wrap ftco-animate">
                                 <div class="icon d-flex justify-content-center align-items-center">
                                     <span class="ion-ios-arrow-back"></span>
                                     <span class="ion-ios-arrow-forward"></span>
@@ -242,7 +256,9 @@ require_once 'admin/contorller/bdconfig.php';
                                 </div>
                                 <h2>24/7 Help & Support</h2>
                                 <p>Even the all-powerful Pointing has no control about the blind.</p>
-                            </a>
+                            </a> -->
+
+
                         </div>
                     </div>
                 </div>
@@ -405,16 +421,28 @@ require_once 'admin/contorller/bdconfig.php';
                 </div>
             </div>
             <div class="row">
+                <?php
+                 $selectQuery= "SELECT our_staff.*,designatoins.designation_name FROM `our_staff` 
+                 INNER JOIN designatoins ON our_staff.designation_id = designatoins.id
+                 WHERE our_staff.active_status= 1";
+                 $staff_list=mysqli_query($dbcon,$selectQuery);
+               foreach($staff_list as $key =>$staff){
+                  
+                
+                
+                ?>
+
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
                             <div class="img align-self-stretch"
-                                style="background-image:url(images/xstaff-1.jpg.pagespeed.ic.-caudx8oxf.jpg)"></div>
+                                style="background-image:url(<?php echo 'admin/uploads/'.$staff['staff_image'];?>)">
+                            </div>
                         </div>
                         <div class="text d-flex align-items-center pt-3 text-center">
                             <div>
-                                <h3 class="mb-2">Lloyd Wilson</h3>
-                                <span class="position mb-4">CEO, Founder</span>
+                                <h3 class="mb-2"><?php echo $staff['staff_name']; ?></h3>
+                                <span class="position mb-4"><?php echo $staff['designation_name']; ?></span>
                                 <div class="faded">
                                     <ul class="ftco-social text-center">
                                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -430,7 +458,9 @@ require_once 'admin/contorller/bdconfig.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
+                <?php }?>
+
+                <!-- <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="staff">
                         <div class="img-wrap d-flex align-items-stretch">
                             <div class="img align-self-stretch"
@@ -504,7 +534,9 @@ require_once 'admin/contorller/bdconfig.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+
             </div>
         </div>
     </section>
@@ -760,22 +792,35 @@ require_once 'admin/contorller/bdconfig.php';
             </div>
             <div class="row no-gutters block-9">
                 <div class="col-md-6 order-md-last d-flex">
-                    <form action="#" class="bg-light p-5 contact-form">
+
+
+
+                    <form action="controller/messageContorller.php" class="bg-light p-5 contact-form" method="POST">
+                        <?php
+                                    if(isset($_GET['msg'])){
+                                    ?>
+                        <di7v class="alert alert-primary">
+                            <button type="button" class="close" data-dismiss="alert"><span>&times;</span><span
+                                    class="sr-only">Close</span></button>
+                            <span class="text-semibold">Succes!</span><?php echo $_GET['msg'];?>
+                        </di7v>
+                        <?php }?>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <input type="text" class="form-control" placeholder="Your Email" name="email">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" class="form-control" placeholder="Subject" name="subject">
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control"
+                            <textarea name="message" id="" cols="30" rows="7" class="form-control"
                                 placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5"
+                                name="sendMessage">
                         </div>
                     </form>
                 </div>
