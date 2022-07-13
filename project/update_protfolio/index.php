@@ -74,6 +74,7 @@ require_once 'admin/contorller/bdconfig.php';
         </div>
     </section>
     <section class="ftco-section ftco-no-pb ftco-no-pt ftco-services bg-light" id="services-section">
+
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-4 ftco-animate py-5 nav-link-wrap">
@@ -106,12 +107,24 @@ require_once 'admin/contorller/bdconfig.php';
                             Creative</a>
                     </div>
                 </div>
+
+
+
                 <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
+
+
                     <div class="tab-content pl-md-5" id="v-pills-tabContent">
+                        <?php 
+                                    $selectQuery= "SELECT * FROM services LIMIT 1";
+                                    $service_list=mysqli_query($dbcon,$selectQuery);
+                                  foreach($service_list as $key =>$service){
+                                    
+                                    ?>
+
                         <div class="tab-pane fade show active py-5" id="v-pills-1" role="tabpanel"
                             aria-labelledby="v-pills-1-tab">
                             <span class="icon mb-3 d-block flaticon-ideas"></span>
-                            <h2 class="mb-4">Business Strategy</h2>
+                            <h2 class="mb-4"><?php echo $service['service_name'];?> </h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam
                                 sunt iste
                                 dolores consequatur</p>
@@ -122,7 +135,13 @@ require_once 'admin/contorller/bdconfig.php';
                                 tempore et quam natus quaerat doloremque.</p>
                             <p><a href="#" class="btn btn-primary px-4 py-3">Learn More</a></p>
                         </div>
-                        <div class="tab-pane fade py-5" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+                        <?php  
+                        }
+                        ?>
+
+
+
+                        <!-- <div class="tab-pane fade py-5" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
                             <span class="icon mb-3 d-block flaticon-flasks"></span>
                             <h2 class="mb-4">Research</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam
@@ -135,6 +154,7 @@ require_once 'admin/contorller/bdconfig.php';
                                 tempore et quam natus quaerat doloremque.</p>
                             <p><a href="#" class="btn btn-primary px-4 py-3">Learn More</a></p>
                         </div>
+
                         <div class="tab-pane fade py-5" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
                             <span class="icon mb-3 d-block flaticon-analysis"></span>
                             <h2 class="mb-4">Data Analysis</h2>
@@ -188,6 +208,7 @@ require_once 'admin/contorller/bdconfig.php';
                             <p><a href="#" class="btn btn-primary px-4 py-3">Learn More</a></p>
                         </div>
                         <div class="tab-pane fade py-5" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-6-tab">
+
                             <span class="icon mb-3 d-block flaticon-idea"></span>
                             <h2 class="mb-4">Creative Solution</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam
@@ -199,12 +220,25 @@ require_once 'admin/contorller/bdconfig.php';
                                 deserunt qui nihil ea,
                                 tempore et quam natus quaerat doloremque.</p>
                             <p><a href="#" class="btn btn-primary px-4 py-3">Learn More</a></p>
-                        </div>
+                        </div> -->
+
                     </div>
+
+
                 </div>
+
+
             </div>
         </div>
+
+
     </section>
+
+
+
+
+
+
     <section class="ftco-section-2 img" style="background-image:url(images/bg_3.jpg)">
         <div class="container">
             <div class="row d-md-flex justify-content-end">

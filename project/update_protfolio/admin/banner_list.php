@@ -8,6 +8,8 @@ include 'contorller/bdconfig.php';
 <html lang="en">
 <?php include 'includes/head.php';?>
 
+
+
 <body>
     <!-- Main navbar -->
     <?php include 'includes/mainNav.php'; ?>
@@ -77,16 +79,15 @@ include 'contorller/bdconfig.php';
                         </div>
                         <div class="panel-body">
                             <?php
-                                    if(isset($_GET['msg'])){
-                                    ?>
+                              if(isset($_GET['msg'])){
+                            ?>
                             <div class="alert alert-success no-border">
-                                <button type="button" class="close" data-dismiss="alert"><span>&times;</span><span
-                                        class="sr-only">Close</span></button>
+                                <button type="button" class="close" data-dismiss="alert"><span>&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
                                 <span class="text-semibold">Succes!</span><?php echo $_GET['msg'];?>
                             </div>
                             <?php }?>
-
-
                             <table class="table table-bordered datatable-basic">
                                 <thead>
                                     <tr>
@@ -102,7 +103,7 @@ include 'contorller/bdconfig.php';
                                     <?php 
                                     $selectQuery= "SELECT * FROM banners WHERE active_status=1";
                                     $banner_list=mysqli_query($dbcon,$selectQuery);
-                                  foreach($banner_list as $key =>$banner){
+                                   foreach($banner_list as $key =>$banner){
                                     
                                     ?>
                                     <tr>
@@ -111,16 +112,16 @@ include 'contorller/bdconfig.php';
                                         <td><?php echo $banner['sub_title'];?></td>
                                         <td><?php echo $banner['details'];?></td>
                                         <td>
-
                                             <img class="img-responsive" width="80" height="80"
                                                 src="<?php echo 'uploads/'.$banner['images'];?>" />
-
                                         </td>
                                         <td class="text-center">
-                                            <a href="bannerUpdate.php?banner_id=<?php echo $banner['id'];?>"><i
-                                                    class=" icon-pencil5"></i></a>
-                                            <a href="bannerDelete.php?banner_id=<?php echo $banner['id'];?>"><i
-                                                    class=" icon-trash"></i></a>
+                                            <a href="bannerUpdate.php?banner_id=<?php echo $banner['id'];?>">
+                                                <i class=" icon-pencil5"></i>
+                                            </a>
+                                            <a href="bannerDelete.php?banner_id=<?php echo  $banner['id'];?>">
+                                                <i class=" icon-trash"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                     <?php }?>
