@@ -13,16 +13,14 @@ Take your skills to a new level and join millions of users that have learned PHP
 - Foreach
 </details>
 
-## Class 4 Overview
-## Class 4 Overview 
-=======
-
+## Class 5 Overview 
 <details>
 <summary>Click Here </summary>
+
 1. Keyword: break, continue
-2.Indexed array
-3.Associative array
-4.Multidimensional array
+2. Indexed array
+3. Associative array
+4. Multidimensional array
 </details>
 
 ## Class 8  
