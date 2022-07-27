@@ -45,12 +45,12 @@ __Intorduction javascript and jquery__
 
 </details>
 
-## Class 25
+## Class 25(jquery)
 <details>
 <summary>Click Here </summary>
 
 __Intorduction javascript and jquery__
-1. What is JavaScript?
-2. What is JQuery?
+- input data red key word---> val()
+- button data red key word---> attr()
 
 </details>
