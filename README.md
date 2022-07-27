@@ -44,3 +44,13 @@ __Intorduction javascript and jquery__
 2. What is JQuery?
 
 </details>
+
+## Class 25
+<details>
+<summary>Click Here </summary>
+
+__Intorduction javascript and jquery__
+1. What is JavaScript?
+2. What is JQuery?
+
+</details>
