@@ -1,0 +1,15 @@
+.box1 {
+    background: rgb(245, 42, 245);
+    width: 60%;
+    height: 200px;
+    border: 1px solid black;
+    color: #fff;
+}
+
+#box2 {
+    background: rgb(17, 240, 29);
+    width: 60%;
+    height: 200px;
+    color: #fff;
+    border: 1px solid black;
+}
