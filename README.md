@@ -64,6 +64,7 @@ __oop__
 - propertis
 - method
 - object
+- constructor
 
 `php `
 ```php
@@ -89,7 +90,6 @@ __oop__
     $object2->a= 20;
     $object2->b= 10;
     echo $object2->sub().'<br>';
-
 
 ```
 

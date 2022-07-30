@@ -21,7 +21,14 @@
     echo $object2->sub().'<br>';
 
 
-
-
-
+    // constructor oop
+    class empoyes{
+        public $name = "sohag";
+        public $salary = 30000;
+        function info(){
+            echo $this->name ."=".$this->salary;
+        }
+    }
+    $object3 = new empoyes();
+    $object3-> info();
 ?>
