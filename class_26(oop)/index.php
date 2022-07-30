@@ -1,12 +1,12 @@
 <?php
     class calculation{ //calla declaration
-        public $a, $b, $c; // proparty
+        public $a, $b, $c; // properties
 
-        function sum(){
+        function sum(){ //method
             $this->c = $this->a + $this->b;
             return $this-> c;
         }
-        function sub(){
+        function sub(){//method
             $this->c = $this->a - $this->b;
             return $this-> c;
         }
@@ -15,7 +15,7 @@
     $object1->a= 20;
     $object1->b= 10;
     echo $object1->sum().'<br>';
-    $object2 =new calculation();
+    $object2 =new calculation();// object declaration
     $object2->a= 20;
     $object2->b= 10;
     echo $object2->sub().'<br>';
