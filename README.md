@@ -93,4 +93,23 @@ __oop__
 
 ```
 
+`php `
+```php
+    // constructor oop
+    class empoyes{
+        public $name = "sohag";
+        public $salary = 30000;
+        function __construct($n="none",$s=0){
+            $this->name = $n;
+            $this->salary =$s;
+        }
+        function info(){
+            echo $this->name ."=".$this->salary;
+        }
+    }
+    $object3 = new empoyes();
+    $object3-> info();
+
+```
+
 </details>
